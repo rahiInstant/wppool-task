@@ -1,0 +1,71 @@
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* adding font--start */
+
+@font-face {
+  font-family: "Messina Sans";
+  src: url("./assets/font/MessinaSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Nantes";
+  src: url("./assets/font/Nantes-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Neue Haas Unica";
+  src: url("./assets/font/NeueHaasUnica-Regular.ttf");
+}
+
+.font-nantes {
+  font-family: "Nantes";
+}
+
+.font-Neue {
+  font-family: "Neue Haas Unica";
+}
+
+.font-messina {
+  font-family: "Messina Sans";
+}
+
+/* adding font--end */
+
+/* Header section */
+
+#banner {
+  background-image: url("./assets/img/banner_ex.png"), url('./assets/img/rec.png');
+  background-repeat: no-repeat;
+  background-position: center,center;
+  background-size: 45%,35%;
+}
+
+
+#nav{
+  width: 100%;
+  max-width: inherit;
+}
+
+.sticky {
+  #nav-child {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    transition-duration: 500ms;
+  }
+  & #company-logo {
+    .company-name {
+      fill: black;
+    }
+  }
+  & #right-side {
+    color: #000;
+    & #share,
+    #report {
+      border-color: #000;
+    }
+  }
+}
