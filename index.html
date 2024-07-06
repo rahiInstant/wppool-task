@@ -13,7 +13,7 @@
     <title>WPPOOL | Home</title>
   </head>
   <body class="bg-[#ededed]">
-    <header id="head" class="max-w-[1300px] mx-auto">
+    <header id="head" class="max-w-[1300px] mx-auto z-10">
       <!-- navbar -->
       <nav id="nav" class="top-0 fixed z-50">
         <div
@@ -164,7 +164,7 @@
         </div>
       </div>
     </header>
-    <main class="max-w-[1300px] mx-auto">
+    <main class="max-w-[1300px] mx-auto -z-10">
       <!-- Dashboard -->
       <section class="mt-10 flex gap-6 bg-white p-5">
         <!-- left side || Tab -->
@@ -469,7 +469,7 @@
         </div>
       </section>
       <!-- Potential future listing -->
-      <section class="mt-24 mb-16">
+      <section class="mt-24">
         <h1 class="text-[48px] font-nantes">Potential Future Listings</h1>
         <p class="font-messina text-base max-w-[800px] mt-4">
           Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
@@ -494,23 +494,105 @@
         </div>
       </section>
       <!-- State of USA -->
-      <section>
-        <h1 class="text-[48px] font-nantes">State of USA</h1>
-        <div class="relative h-fit text-white w-[200px]">
-          <select
-            name="sector"
-            class="py-2 px-5 text-lg bg-[#2042B6] appearance-none rounded-full font-semibold outline-none w-full"
-          >
-            <option class="hidden" value="">sector</option>
-            <option value="">value 1</option>
-          </select>
+      <section class="mt-24 mb-16 pb-28" id="state">
+        <!-- top -->
+        <div>
+          <h1 class="text-[48px] font-nantes">State of USA</h1>
+          <!-- select -->
+          <div class="relative h-fit text-white w-[200px] mt-5">
+            <select
+              name="sector"
+              class="py-2 px-5 text-[42px] font-nantes bg-[#2042B6] appearance-none rounded-full outline-none w-full"
+            >
+              <option class="hidden" value="">2024</option>
+              <option value="">value 1</option>
+            </select>
+            <div
+              class="absolute top-1/2 right-5 -translate-y-1/2 pointer-events-none"
+            >
+              <i class="fa-solid fa-sort-down text-base"></i>
+            </div>
+          </div>
+          <!-- paragraph -->
+          <p class="mt-4 font-messina">
+            Click through the slides or download the report to view natively on
+            your device.
+          </p>
+        </div>
+        <!-- bottom || slider -->
+        <div>
+          <!-- slider || img -->
           <div
-            class="absolute top-1/2 right-5 -translate-y-1/2 pointer-events-none"
+            id="carousel"
+            draggable="false"
+            class="mt-5 [&>*]:h-[325px] flex gap-5 overflow-x-scroll cursor-grab [&>*]:select-none scroll-bar scroll-smooth"
+            id="slide"
           >
-            <i class="fa-solid fa-sort-down text-base"></i>
+            <img
+              id="card"
+              class="w-[578px]"
+              draggable="false"
+              src="./assets/img/card_1.svg"
+              alt=""
+            />
+            <img draggable="false" src="./assets/img/card_2.svg" alt="" />
+            <img draggable="false" src="./assets/img/card_3.svg" alt="" />
+            <img draggable="false" src="./assets/img/card_1.svg" alt="" />
+            <img draggable="false" src="./assets/img/card_2.svg" alt="" />
+            <img draggable="false" src="./assets/img/card_3.svg" alt="" />
+            <img draggable="false" src="./assets/img/card_1.svg" alt="" />
+            <img draggable="false" src="./assets/img/card_2.svg" alt="" />
+            <img draggable="false" src="./assets/img/card_3.svg" alt="" />
+          </div>
+          <!-- slider btn -->
+          <div class="mt-5 flex justify-between items-center">
+            <div class="flex gap-7">
+              <!-- arrow -->
+              <div class="flex gap-5">
+                <!-- left -->
+                <div
+                  id="L"
+                  class="arrow cursor-pointer w-14 h-14 bg-white rounded-full flex items-center justify-center bottom-10 right-10 p-4 shadow-[0px_24px_36px_0px] shadow-[#5857574d]"
+                >
+                  <i class="fa-solid fa-arrow-left text-[#2042B6]"></i>
+                </div>
+                <!-- right -->
+                <div
+                  id="R"
+                  class="arrow cursor-pointer w-14 h-14 bg-white rounded-full flex items-center justify-center bottom-10 right-10 p-4 shadow-[0px_24px_36px_0px] shadow-[#5857574d]"
+                >
+                  <i class="fa-solid fa-arrow-right text-[#2042B6]"></i>
+                </div>
+              </div>
+              <!-- select -->
+              <div class="flex items-center gap-2 relative">
+                <h4>Pages</h4>
+                <div
+                  class="relative w-[200px] shadow-[0px_24px_24px_0px] shadow-[#5857574d] rounded-full"
+                >
+                  <select
+                    name="sector"
+                    class="py-3 px-5 font-messina bg-white appearance-none rounded-full outline-none w-full"
+                  >
+                    <option id="show-current" class="hidden" value="">1 and 2</option>
+                    <option value="">value 1</option>
+                  </select>
+                  <div
+                    class="absolute top-1/2 right-5 -translate-y-1/2 pointer-events-none"
+                  >
+                    <i class="fa-solid fa-sort-down text-base"></i>
+                  </div>
+                </div>
+                <h4>of <span id="total-slide"></span></h4>
+              </div>
+            </div>
+            <div
+              class="text-xs font-normal p-4 rounded-full bg-[#2042B6] text-white w-fit font-messina mr-20 cursor-pointer"
+            >
+              Download the 2024 Report
+            </div>
           </div>
         </div>
-        <p></p>
       </section>
     </main>
     <footer></footer>
