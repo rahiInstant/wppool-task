@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>WPPOOL | Home</title>
   </head>
-  <body>
+  <body class="bg-[#ededed]">
     <header id="head" class="max-w-[1300px] mx-auto">
       <!-- navbar -->
       <nav id="nav" class="top-0 fixed z-50">
@@ -158,14 +158,15 @@
         </div>
         <!-- floating dropdown btn -->
         <div
-          class="w-14 h-14 bg-white rounded-full flex items-center justify-center absolute bottom-10 right-10 shadow-2xl p-4"
+          class="w-14 h-14 bg-white rounded-full flex items-center justify-center absolute bottom-10 right-10 shadow-[0px_24px_24px_0px] shadow-[#0000005c] p-4"
         >
           <i class="fa-solid fa-arrow-down text-[#2042B6]"></i>
         </div>
       </div>
     </header>
     <main class="max-w-[1300px] mx-auto">
-      <section class="mt-10 flex gap-6">
+      <!-- Dashboard -->
+      <section class="mt-10 flex gap-6 bg-white p-5">
         <!-- left side || Tab -->
         <div
           class="p-3 bg-[#EFF3F6] rounded-[14px] w-[300px] space-y-3 font-nantes"
@@ -320,8 +321,196 @@
               <div class="cursor-pointer py-1 px-2 rounded-full">1W</div>
             </div>
           </div>
+          <!-- Chart -->
           <canvas class="w-full h-500px mt-6" id="myChart"></canvas>
         </div>
+      </section>
+      <!-- Companies List -->
+      <section class="mt-10">
+        <div class="rounded-[20px] p-10 bg-white">
+          <!-- title and searchbar -->
+          <div class="flex justify-between items-center">
+            <!-- title -->
+            <h1 class="text-[48px] font-nantes flex-1">All Companies</h1>
+            <!-- search-bar -->
+            <div class="relative flex-1 w-full">
+              <input
+                class="px-5 py-4 border rounded-[10px] outline-none font-nantes text-2xl bg-[#F3F3F3] text-[#191618] indent-8 w-full"
+                placeholder="Search Companies"
+                type="text"
+              />
+              <i
+                class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-lg text-[#191618]"
+              ></i>
+            </div>
+          </div>
+          <!-- table -->
+          <div class="mt-14 h-[400px] overflow-y-scroll pr-5 diff">
+            <table class="w-full relative">
+              <thead class="sticky top-0 bg-white">
+                <tr class="[&>*]:p-4">
+                  <th class="text-base">Company</th>
+                  <th class="text-sm">Ticker</th>
+                  <th class="text-sm">Vertical</th>
+                  <th class="text-sm">Price</th>
+                  <th class="text-sm">Market Cap ($)</th>
+                  <th class="text-sm">Revenue Growth</th>
+                  <th class="text-sm">Gross Margin</th>
+                  <th class="text-sm">EV/Revenue</th>
+                  <th class="text-sm">YTD Performance</th>
+                </tr>
+              </thead>
+              <tbody
+                class="[&>*:nth-child(even)]:bg-white [&>*:nth-child(odd)]:bg-[#F3F3F3] w-full text-center font-nantes"
+              >
+                <tr class="[&>*]:p-4">
+                  <td class="rounded-l-lg">Adyen</td>
+                  <td>AFRM</td>
+                  <td>Payments</td>
+                  <td>$17.15</td>
+                  <td>$50.5</td>
+                  <td>49.0%</td>
+                  <td>15.8%</td>
+                  <td>6.3</td>
+                  <td class="rounded-r-lg">24.3%</td>
+                </tr>
+                <tr class="[&>*]:p-4">
+                  <td class="rounded-l-lg">Adyen</td>
+                  <td>AFRM</td>
+                  <td>Payments</td>
+                  <td>$17.15</td>
+                  <td>$50.5</td>
+                  <td>49.0%</td>
+                  <td>15.8%</td>
+                  <td>6.3</td>
+                  <td class="rounded-r-lg">24.3%</td>
+                </tr>
+                <tr class="[&>*]:p-4">
+                  <td class="rounded-l-lg">Adyen</td>
+                  <td>AFRM</td>
+                  <td>Payments</td>
+                  <td>$17.15</td>
+                  <td>$50.5</td>
+                  <td>49.0%</td>
+                  <td>15.8%</td>
+                  <td>6.3</td>
+                  <td class="rounded-r-lg">24.3%</td>
+                </tr>
+                <tr class="[&>*]:p-4">
+                  <td class="rounded-l-lg">Adyen</td>
+                  <td>AFRM</td>
+                  <td>Payments</td>
+                  <td>$17.15</td>
+                  <td>$50.5</td>
+                  <td>49.0%</td>
+                  <td>15.8%</td>
+                  <td>6.3</td>
+                  <td class="rounded-r-lg">24.3%</td>
+                </tr>
+                <tr class="[&>*]:p-4">
+                  <td class="rounded-l-lg">Adyen</td>
+                  <td>AFRM</td>
+                  <td>Payments</td>
+                  <td>$17.15</td>
+                  <td>$50.5</td>
+                  <td>49.0%</td>
+                  <td>15.8%</td>
+                  <td>6.3</td>
+                  <td class="rounded-r-lg">24.3%</td>
+                </tr>
+                <tr class="[&>*]:p-4">
+                  <td class="rounded-l-lg">Adyen</td>
+                  <td>AFRM</td>
+                  <td>Payments</td>
+                  <td>$17.15</td>
+                  <td>$50.5</td>
+                  <td>49.0%</td>
+                  <td>15.8%</td>
+                  <td>6.3</td>
+                  <td class="rounded-r-lg">24.3%</td>
+                </tr>
+                <tr class="[&>*]:p-4">
+                  <td class="rounded-l-lg">Adyen</td>
+                  <td>AFRM</td>
+                  <td>Payments</td>
+                  <td>$17.15</td>
+                  <td>$50.5</td>
+                  <td>49.0%</td>
+                  <td>15.8%</td>
+                  <td>6.3</td>
+                  <td class="rounded-r-lg">24.3%</td>
+                </tr>
+                <tr class="[&>*]:p-4">
+                  <td class="rounded-l-lg">Adyen</td>
+                  <td>AFRM</td>
+                  <td>Payments</td>
+                  <td>$17.15</td>
+                  <td>$50.5</td>
+                  <td>49.0%</td>
+                  <td>15.8%</td>
+                  <td>6.3</td>
+                  <td class="rounded-r-lg">24.3%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="flex items-center gap-5 justify-center mt-10">
+          <div
+            class="text-white bg-[#2042B6] rounded-full p-4 shadow-[0px_24px_36px_0px] shadow-[#00000040]"
+          >
+            Download ‘All Companies’ Data
+          </div>
+          <div
+            class="text-white bg-[#2042B6] rounded-full p-4 shadow-[0px_24px_36px_0px] shadow-[#00000040]"
+          >
+            View Methodology
+          </div>
+        </div>
+      </section>
+      <!-- Potential future listing -->
+      <section class="mt-24 mb-16">
+        <h1 class="text-[48px] font-nantes">Potential Future Listings</h1>
+        <p class="font-messina text-base max-w-[800px] mt-4">
+          Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos.
+        </p>
+        <!-- companies logo -->
+        <div
+          class="[&>*]:py-8 [&>*]:px-11 grid grid-cols-5 gap-5 [&>*]:bg-white [&>*]:rounded-md [&>*]:flex [&>*]:items-center [&>*]:justify-center mt-7"
+        >
+          <div><img src="./assets/img/stripe.svg" alt="" /></div>
+          <div><img src="./assets/img/klarna.svg" alt="" /></div>
+          <div><img src="./assets/img/plaid.svg" alt="" /></div>
+          <div><img src="./assets/img/checkout.svg" alt="" /></div>
+          <div><img src="./assets/img/revolut.svg" alt="" /></div>
+          <div><img src="./assets/img/chime.svg" alt="" /></div>
+          <div><img src="./assets/img/n26.svg" alt="" /></div>
+          <div><img src="./assets/img/brex.svg" alt="" /></div>
+          <div><img src="./assets/img/deel.svg" alt="" /></div>
+          <div><img src="./assets/img/gusto.svg" alt="" /></div>
+        </div>
+      </section>
+      <!-- State of USA -->
+      <section>
+        <h1 class="text-[48px] font-nantes">State of USA</h1>
+        <div class="relative h-fit text-white w-[200px]">
+          <select
+            name="sector"
+            class="py-2 px-5 text-lg bg-[#2042B6] appearance-none rounded-full font-semibold outline-none w-full"
+          >
+            <option class="hidden" value="">sector</option>
+            <option value="">value 1</option>
+          </select>
+          <div
+            class="absolute top-1/2 right-5 -translate-y-1/2 pointer-events-none"
+          >
+            <i class="fa-solid fa-sort-down text-base"></i>
+          </div>
+        </div>
+        <p></p>
       </section>
     </main>
     <footer></footer>

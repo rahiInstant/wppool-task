@@ -29,6 +29,7 @@
 
 /* adding font--end */
 
+
 /* Header section */
 
 #banner {
@@ -44,6 +45,7 @@
   max-width: inherit;
 }
 
+/* sticky header */
 .sticky {
   #nav-child {
     background-color: #f3f3f3;
@@ -64,30 +66,22 @@
   }
 }
 
+/* all companies scrollbar */
+.diff::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
 
-/* 
-.chartMenu {
-  width: 100vw;
-  height: 40px;
-  background: #1A1A1A;
-  color: rgba(54, 162, 235, 1);
+.diff::-webkit-scrollbar-track {
+  background: transparent; 
 }
-.chartMenu p {
-  padding: 10px;
-  font-size: 20px;
+ 
+.diff::-webkit-scrollbar-thumb {
+  background: #888; 
 }
-.chartCard {
-  width: 100vw;
-  height: calc(100vh - 40px);
-  background: rgba(54, 162, 235, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.diff::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
-.chartBox {
-  width: 700px;
-  padding: 20px;
-  border-radius: 20px;
-  border: solid 3px rgba(54, 162, 235, 1);
-  background: white;
-} */
+
+
