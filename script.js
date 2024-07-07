@@ -1,24 +1,38 @@
 const drop = document.getElementById("drop");
 const openIcon = document.getElementById("open");
 const closeIcon = document.getElementById("close");
+const navDown = document.getElementById("nav-down");
 const myChart = document.getElementById("myChart");
 const carousel = document.getElementById("carousel");
 const arrow = document.querySelectorAll(".arrow");
 const cardWidth = document.getElementById("card").offsetWidth;
 const showCurrent = document.getElementById("show-current");
 document.getElementById("total-slide").innerText = carousel.children.length;
+const container = document.getElementById("my-chart");
 
 // for navbar dropdown
 let isDrop = false;
-drop.addEventListener("click", () => {
-  if (isDrop) {
-    closeIcon.classList.add("hidden");
-    openIcon.classList.remove("hidden");
-  } else {
-    closeIcon.classList.remove("hidden");
-    openIcon.classList.add("hidden");
+
+openIcon.addEventListener("click", () => {
+  navDown.classList.remove("opacity-0");
+  navDown.classList.remove("pointer-events-none");
+});
+
+closeIcon.addEventListener("click", () => {
+  navDown.classList.add("opacity-0");
+  navDown.classList.add("pointer-events-none");
+});
+
+document.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (
+    !openIcon.contains(e.target) &&
+    !closeIcon.contains(e.target) &&
+    !navDown.contains(e.target)
+  ) {
+    navDown.classList.add("opacity-0");
+    navDown.classList.add("pointer-events-none");
   }
-  isDrop = !isDrop;
 });
 
 // for navbar sticky mode
@@ -28,46 +42,52 @@ window.addEventListener("scroll", () => {
     .classList.toggle("sticky", window.scrollY > 0);
 });
 
+document.getElementById("down").addEventListener("click", () => {
+  document.getElementById("dashboard").scrollIntoView({ behavior: "smooth" });
+});
+
 // for chart
 function randomValue() {
   const arr = [];
-  for (let i = 0; i < 20; i++) {
-    arr.push(Math.floor((Math.random() * 22 * 100) / 22));
+  let prev = 100;
+  for (let i = 0; i < 1000; i++) {
+    prev += 5 - Math.random() * 10;
+    arr.push({ x: i, y: prev });
   }
   return arr;
 }
 
-const xValues = ["Feb", "Mar", "Apr", "Jun", "July"];
-const yValues01 = [...randomValue()];
-const yValues02 = [...randomValue()];
+function datasets() {
+  const store = [];
+  const companies = ["Google", "Meta", "Amazon", "Yahoo"];
+  for (const company of companies) {
+    store.push({
+      label: company,
+      borderWidth: 1.5,
+      radius: 0,
+      data: randomValue(),
+    });
+  }
+  return store;
+}
+
+const option = {
+  plugins: {
+    legend: {
+      position: "bottom",
+    },
+  },
+  scales: {
+    x: {
+      type: "linear",
+    },
+  },
+};
 
 new Chart(myChart, {
   type: "line",
-  data: {
-    labels: xValues,
-    datasets: [
-      {
-        fill: false,
-        lineTension: 0,
-        backgroundColor: "rgba(0,0,255,1.0)",
-        borderColor: "rgba(0,0,255,0.1)",
-        data: yValues01,
-      },
-      {
-        fill: false,
-        lineTension: 0,
-        backgroundColor: "rgba(0,0,255,1.0)",
-        borderColor: "rgba(0,0,255,0.1)",
-        data: yValues02,
-      },
-    ],
-  },
-  options: {
-    legend: { display: false },
-    scales: {
-      yAxes: [{ ticks: { min: 0, max: 100 } }],
-    },
-  },
+  data: { datasets: datasets() },
+  options: option,
 });
 
 // for slider
@@ -76,13 +96,13 @@ let isDragging = false,
   startX,
   startScrollLeft;
 
-function currentSlider() {
-  currentCardNumber =
-    carousel.children.length -
-    Math.round((carousel.scrollWidth - startScrollLeft) / cardWidth) +
-    1;
-  showCurrent.innerText = `${currentCardNumber} and ${currentCardNumber + 1}`;
-}
+// function currentSlider() {
+//   currentCardNumber =
+//     carousel.children.length -
+//     Math.round((carousel.scrollWidth - startScrollLeft) / cardWidth) +
+//     1;
+//   showCurrent.innerText = `${currentCardNumber} and ${currentCardNumber + 1}`;
+// }
 
 arrow.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -99,7 +119,7 @@ const dragStart = (e) => {
 };
 const dragging = (e) => {
   if (!isDragging) return;
-  carousel.scrollLeft = startScrollLeft + (startX - e.pageX)*6;
+  carousel.scrollLeft = startScrollLeft + (startX - e.pageX) * 6;
   currentSlider();
 };
 const dragStop = () => {

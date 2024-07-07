@@ -8,7 +8,7 @@
       src="https://kit.fontawesome.com/22a70726e2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>WPPOOL | Home</title>
   </head>
@@ -18,7 +18,7 @@
       <nav id="nav" class="top-0 fixed z-50">
         <div
           id="nav-child"
-          class="flex items-center justify-between py-4 px-10 m-5 duration-500"
+          class="flex items-center justify-between py-4 px-10 m-2 sm:m-5 duration-500 shadow-[#0000001f] relative"
         >
           <!-- company logo || left side -->
           <svg
@@ -97,29 +97,69 @@
             <!-- shear icon -->
             <div
               id="share"
-              class="p-4 border rounded-full w-4 h-4 flex items-center justify-center"
+              class="p-4 border rounded-full flex items-center justify-center max-sm:hidden"
             >
               <i class="fa-solid fa-share-nodes"></i>
             </div>
             <!-- download report btn -->
             <h4
               id="report"
-              class="text-xs font-normal p-4 rounded-full border w-fit font-messina"
+              class="text-xs font-normal p-4 rounded-full border w-fit font-messina max-lg:hidden"
             >
               Download the 2024 Report
             </h4>
             <!-- nav dropdown -->
             <div>
-              <!-- bars and X-mark -->
-              <div
-                class="text-xl cursor-pointer w-7 h-7 flex items-center justify-center"
-                id="drop"
-              >
-                <i class="fa-solid fa-bars" id="open"></i>
-                <i class="fa-solid fa-xmark hidden" id="close"></i>
+              <!-- bars -->
+              <i
+                class="fa-solid fa-bars text-2xl cursor-pointer w-7 h-7"
+                id="open"
+              ></i>
+            </div>
+          </div>
+          <!-- navbar drop down content -->
+          <div
+            id="nav-down"
+            class="rounded-[18px] p-9 absolute max-sm:w-full bg-white top-0 right-0 opacity-0 pointer-events-none duration-300 transition-opacity"
+          >
+            <!-- top part -->
+            <div class="flex items-center gap-3 justify-between">
+              <div class="flex items-center gap-3">
+                <!-- shear icon -->
+                <div
+                  id="share"
+                  class="p-4 border bg-[#AFCD80] rounded-full flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-share-nodes text-white"></i>
+                </div>
+                <!-- download report btn -->
+                <h4
+                  id="report"
+                  class="text-xs font-normal bg-[#2042B6] text-white p-4 rounded-full border w-fit font-messina"
+                >
+                  Download the 2024 Report
+                </h4>
               </div>
-              <!-- dropdown content -->
-              <div></div>
+              <!-- X mark -->
+              <i
+                class="fa-solid fa-xmark text-2xl cursor-pointer w-7 h-7"
+                id="close"
+              ></i>
+            </div>
+            <!-- bottom part -->
+            <div>
+              <div class="text-lg font-messina flex flex-col gap-6 mt-8">
+                <a href="#">The WPPOOL Index </a>
+                <a href="#">All Companies</a>
+                <a href="#">Potential Future Listings</a>
+                <a href="#">State of USA</a>
+                <a href="#">Stories & Ideas</a>
+                <a href="#">About WPPOOL</a>
+                <a href="#">WPPOOL Portfolio Companies</a>
+              </div>
+              <a class="text-xl text-[#2042B6] font-nantes mt-9 block" href="#"
+                >Visit WPPOOL</a
+              >
             </div>
           </div>
         </div>
@@ -127,38 +167,42 @@
       <!-- banner content -->
       <div
         id="banner"
-        class="h-[700px] flex justify-center items-center bg-[#2042B6] rounded-b-xl py-8 px-10 relative text-white"
+        class="h-[700px] flex max-[1300px]:flex-col justify-center items-center bg-[#2042B6] rounded-b-xl py-8 px-10 relative text-white"
       >
-        <!-- banner statistics -->
-        <div class="space-y-12 absolute bottom-10 left-10">
-          <div>
-            <h1 class="font-nantes text-[36px]">60</h1>
-            <p class="font-messina text-base">Companies</p>
-          </div>
-          <div>
-            <h1 class="font-nantes text-[36px]">$100B</h1>
-            <p class="font-messina text-base">Market cap</p>
-          </div>
-          <div>
-            <h1 class="font-nantes text-[36px]">3.5x</h1>
-            <p class="font-messina text-base">Revenue multiple</p>
-          </div>
-          <div>
-            <h1 class="font-nantes text-[36px]">60%</h1>
-            <p class="font-messina text-base">LTM avg. revenue growth rate</p>
-          </div>
-        </div>
         <!-- banner title -->
         <div class="">
-          <h1 class="font-nantes text-[78px] text-center">The WPPOOL Index</h1>
-          <p class="font-messina text-[21px] font-[350px] text-center">
+          <h1 class="font-nantes text-[36px] sm:text-[58px] md:text-[68px] lg:text-[78px] text-center">The WPPOOL Index</h1>
+          <p class="font-messina text-base sm:text-lg md:text-[21px] md:font-[350px] text-center">
             Monitor the performance of emerging, publicly traded, financial
             technology companies
           </p>
         </div>
+        <!-- banner statistics -->
+        <div
+          class="max-[1300px]:mt-16 max-[1300px]:text-center min-[1300px]:space-y-12 min-[1300px]:absolute max-[1300px]:grid grid-cols-2 md:grid-cols-4 max-[1300px]:gap-6 min-[1300px]:bottom-10 min-[1300px]:left-10"
+        >
+          <div>
+            <h1 class="font-nantes text-[30px] lg:text-[36px]">60</h1>
+            <p class="font-messina text-sm max-sm:text-base">Companies</p>
+          </div>
+          <div>
+            <h1 class="font-nantes text-[30px] lg:text-[36px]">$100B</h1>
+            <p class="font-messina text-sm max-sm:text-base">Market cap</p>
+          </div>
+          <div>
+            <h1 class="font-nantes text-[30px] lg:text-[36px]">3.5x</h1>
+            <p class="font-messina text-sm max-sm:text-base">Revenue multiple</p>
+          </div>
+          <div>
+            <h1 class="font-nantes text-[30px] lg:text-[36px]">60%</h1>
+            <p class="font-messina text-sm max-sm:text-base">LTM avg. revenue growth rate</p>
+          </div>
+        </div>
+
         <!-- floating dropdown btn -->
         <div
-          class="w-14 h-14 bg-white rounded-full flex items-center justify-center absolute bottom-10 right-10 shadow-[0px_24px_24px_0px] shadow-[#0000005c] p-4"
+          id="down"
+          class="w-14 h-14 cursor-pointer bg-white rounded-full flex items-center justify-center absolute bottom-10 right-10 shadow-[0px_24px_24px_0px] shadow-[#0000005c] p-4"
         >
           <i class="fa-solid fa-arrow-down text-[#2042B6]"></i>
         </div>
@@ -166,10 +210,10 @@
     </header>
     <main class="max-w-[1300px] mx-auto -z-10">
       <!-- Dashboard -->
-      <section class="mt-10 flex gap-6 bg-white p-5">
+      <section id="dashboard" class=" max-sm:mx-3 max-[1300px]:mx-5 mt-10 flex flex-col min-[900px]:flex-row gap-6 bg-white p-5">
         <!-- left side || Tab -->
         <div
-          class="p-3 bg-[#EFF3F6] rounded-[14px] w-[300px] space-y-3 font-nantes"
+          class="min-[900px]:w-[30%] min-[1100px]:w-[25%] max-[900px]:gap-4 max-[900px]:w-full max-[900px]:grid max-[900px]:grid-cols-2 max-[290px]:grid-cols-1 p-3 bg-[#EFF3F6] rounded-[14px] w-[300px] min-[900px]:space-y-3 font-nantes"
         >
           <!-- Tab 01 -->
           <div
@@ -215,14 +259,14 @@
           </div>
         </div>
         <!-- right side -->
-        <div class="w-full">
+        <div class="min-[900px]:w-[70%] min-[1100px]:w-[75%] min-[1300px]:w-full">
           <!-- section name -->
-          <div class="text-[36px] font-nantes flex items-center gap-2">
+          <div class="text-[30px] sm:text-[36px] font-nantes flex items-center gap-2">
             <img src="./assets/img/union.svg" alt="" />
-            <div>The WPPOOL Index</div>
+            <div class="">The WPPOOL Index</div>
           </div>
           <!-- summary statistics -->
-          <div class="mt-4 flex justify-between items-center">
+          <div class="mt-4 grid min-[1300px]:grid-cols-4 md:grid-cols-2 grid-cols-1 [&>*]:max-[1300px]:w-full gap-5">
             <!-- stat card 01 -->
             <div
               class="px-3 py-4 w-[230px] bg-[#F3F3F3] rounded-md flex items-center justify-between"
@@ -274,13 +318,13 @@
             </div>
           </div>
           <!-- filter -->
-          <div class="mt-5 flex justify-between">
+          <div class="mt-5 flex flex-col min-[1080px]:flex-row justify-between gap-4">
             <!-- left side -->
-            <div class="flex gap-6">
-              <div class="relative h-fit text-white w-[200px]">
+            <div class="flex gap-6 max-[1080px]:w-full">
+              <div class="relative h-fit text-white w-[200px] max-[1080px]:w-full">
                 <select
                   name="sector"
-                  class="py-2 px-5 text-lg bg-[#2042B6] appearance-none rounded-full font-semibold outline-none w-full"
+                  class="max-[1080px]:w-full win py-2 px-5 text-lg bg-[#2042B6] appearance-none rounded-full font-semibold outline-none w-full"
                 >
                   <option class="hidden" value="">sector</option>
                   <option value="">value 1</option>
@@ -291,10 +335,10 @@
                   <i class="fa-solid fa-sort-down text-base"></i>
                 </div>
               </div>
-              <div class="relative h-fit text-white w-[200px]">
+              <div class="relative h-fit text-white w-[200px] max-[1080px]:w-full">
                 <select
                   name="ipo"
-                  class="py-2 px-5 text-lg bg-[#2042B6] appearance-none rounded-full font-semibold outline-none w-full"
+                  class="max-[1080px]:w-full py-2 px-5 text-lg bg-[#2042B6] appearance-none rounded-full font-semibold outline-none w-full"
                 >
                   <option class="hidden" value="">Types of IPO</option>
                   <option value="">value 1</option>
@@ -322,16 +366,18 @@
             </div>
           </div>
           <!-- Chart -->
-          <canvas class="w-full h-500px mt-6" id="myChart"></canvas>
+          <canvas class="w-full h-[500px] mt-6" id="myChart"></canvas>
+          <!-- <div id="my-chart"></div> -->
         </div>
       </section>
       <!-- Companies List -->
-      <section class="mt-10">
+      <section class="mt-10 max-sm:mx-3 max-[1300px]:mx-5">
+        <!-- top part -->
         <div class="rounded-[20px] p-10 bg-white">
           <!-- title and searchbar -->
-          <div class="flex justify-between items-center">
+          <div class="flex flex-col sm:flex-row gap-5 justify-between items-center">
             <!-- title -->
-            <h1 class="text-[48px] font-nantes flex-1">All Companies</h1>
+            <h1 class="text-[34px] md:text-[48px] font-nantes flex-1">All Companies</h1>
             <!-- search-bar -->
             <div class="relative flex-1 w-full">
               <input
@@ -345,12 +391,17 @@
             </div>
           </div>
           <!-- table -->
-          <div class="mt-14 h-[400px] overflow-y-scroll pr-5 diff">
+          <div class="mt-10 min-[900px]:mt-14 h-[400px] overflow-y-scroll pr-5 diff">
             <table class="w-full relative">
               <thead class="sticky top-0 bg-white">
                 <tr class="[&>*]:p-4">
                   <th class="text-base">Company</th>
-                  <th class="text-sm">Ticker</th>
+                  <th class="text-sm">
+                    <select name="" id="">
+                      <option value="" class="hidden">Ticker</option>
+                      <option value="">AFRM</option>
+                    </select>
+                  </th>
                   <th class="text-sm">Vertical</th>
                   <th class="text-sm">Price</th>
                   <th class="text-sm">Market Cap ($)</th>
@@ -455,22 +506,23 @@
             </table>
           </div>
         </div>
-        <div class="flex items-center gap-5 justify-center mt-10">
+        <!-- down btn -->
+        <div class="flex min-[600px]:flex-row max-[600px]:mx-5 flex-col items-center gap-5 justify-center mt-10">
           <div
-            class="text-white bg-[#2042B6] rounded-full p-4 shadow-[0px_24px_36px_0px] shadow-[#00000040]"
+            class="max-[600px]:w-full max-[600px]:text-center text-white bg-[#2042B6] rounded-full p-4 shadow-[0px_24px_36px_0px] shadow-[#00000040]"
           >
-            Download ‘All Companies’ Data
+            Download All Companies Data
           </div>
           <div
-            class="text-white bg-[#2042B6] rounded-full p-4 shadow-[0px_24px_36px_0px] shadow-[#00000040]"
+            class="max-[600px]:w-full max-[600px]:text-center text-white bg-[#2042B6] rounded-full p-4 shadow-[0px_24px_36px_0px] shadow-[#00000040]"
           >
             View Methodology
           </div>
         </div>
       </section>
       <!-- Potential future listing -->
-      <section class="mt-24">
-        <h1 class="text-[48px] font-nantes">Potential Future Listings</h1>
+      <section class="mt-16 min-[800px]:mt-24 max-sm:mx-3 max-[1300px]:mx-5 ">
+        <h1 class="text-[32px] sm:text-[36px] min-[800px]:text-[48px] font-nantes">Potential Future Listings</h1>
         <p class="font-messina text-base max-w-[800px] mt-4">
           Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
           vulputate libero et velit interdum, ac aliquet odio mattis. Class
@@ -479,44 +531,44 @@
         </p>
         <!-- companies logo -->
         <div
-          class="[&>*]:py-8 [&>*]:px-11 grid grid-cols-5 gap-5 [&>*]:bg-white [&>*]:rounded-md [&>*]:flex [&>*]:items-center [&>*]:justify-center mt-7"
+          class="max-[800px]:[&>*]:py-5 min-[800px]:[&>*]:py-8 max-[800px]:[&>*]:px-8 min-[800px]:[&>*]:px-11 grid grid-cols-2 min-[700px]:grid-cols-3 min-[1000px]:grid-cols-4 min-[1300px]:grid-cols-5 gap-5 [&>*]:bg-white [&>*]:rounded-md [&>*]:flex [&>*]:items-center [&>*]:justify-center mt-7"
         >
           <div>
-            <img src="./assets/img/future companies/stripe.svg" alt="" />
+            <img class="max-[800px]:w-[100px] max-[800px]:h-[100px]" src="./assets/img/future companies/stripe.svg" alt="" />
           </div>
           <div>
-            <img src="./assets/img/future companies/klarna.svg" alt="" />
+            <img class="max-[800px]:w-[100px] max-[800px]:h-[100px]" src="./assets/img/future companies/klarna.svg" alt="" />
           </div>
           <div>
-            <img src="./assets/img/future companies/plaid.svg" alt="" />
+            <img class="max-[800px]:w-[100px] max-[800px]:h-[100px]" src="./assets/img/future companies/plaid.svg" alt="" />
           </div>
           <div>
-            <img src="./assets/img/future companies/checkout.svg" alt="" />
+            <img class="max-[800px]:w-[100px] max-[800px]:h-[100px]" src="./assets/img/future companies/checkout.svg" alt="" />
           </div>
           <div>
-            <img src="./assets/img/future companies/revolut.svg" alt="" />
+            <img class="max-[800px]:w-[100px] max-[800px]:h-[100px]" src="./assets/img/future companies/revolut.svg" alt="" />
           </div>
           <div>
-            <img src="./assets/img/future companies/chime.svg" alt="" />
+            <img class="max-[800px]:w-[100px] max-[800px]:h-[100px]" src="./assets/img/future companies/chime.svg" alt="" />
           </div>
-          <div><img src="./assets/img/future companies/n26.svg" alt="" /></div>
-          <div><img src="./assets/img/future companies/brex.svg" alt="" /></div>
-          <div><img src="./assets/img/future companies/deel.svg" alt="" /></div>
+          <div><img class="max-[700px]:w-[100px] max-[700px]:h-[100px]" src="./assets/img/future companies/n26.svg" alt="" /></div>
+          <div><img class="max-[700px]:w-[100px] max-[700px]:h-[100px]" src="./assets/img/future companies/brex.svg" alt="" /></div>
+          <div><img class="max-[700px]:w-[100px] max-[700px]:h-[100px]" src="./assets/img/future companies/deel.svg" alt="" /></div>
           <div>
-            <img src="./assets/img/future companies/gusto.svg" alt="" />
+            <img class="max-[700px]:w-[100px] max-[700px]:h-[100px]" src="./assets/img/future companies/gusto.svg" alt="" />
           </div>
         </div>
       </section>
       <!-- State of USA -->
-      <section class="mt-24 pb-28 select-none" id="state">
+      <section class="mt-24 pb-28 select-none max-sm:mx-3 max-[1300px]:mx-5" id="state">
         <!-- top -->
         <div>
-          <h1 class="text-[48px] font-nantes">State of USA</h1>
+          <h1 class="text-[32px] sm:text-[36px] min-[800px]:text-[48px] font-nantes">State of USA</h1>
           <!-- select -->
-          <div class="relative h-fit text-white w-[200px] mt-5">
+          <div class="relative h-fit text-white w-[200px] mt-3 sm:mt-5">
             <select
               name="sector"
-              class="py-2 px-5 text-[42px] font-nantes bg-[#2042B6] appearance-none rounded-full outline-none w-full"
+              class="py-2 px-5 text-[20px] sm:text-[24px] md:text-[36px] lg:text-[42px] font-nantes bg-[#2042B6] appearance-none rounded-full outline-none w-full"
             >
               <option class="hidden" value="">2024</option>
               <option value="">value 1</option>
@@ -539,7 +591,7 @@
           <div
             id="carousel"
             draggable="false"
-            class="mt-5 [&>*]:h-[325px] flex gap-5 overflow-x-scroll cursor-grab [&>*]:select-none scroll-bar scroll-smooth"
+            class="mt-5 max-sm:[&>*]:h-[250px] [&>*]:h-[300px] flex gap-5 overflow-x-scroll cursor-grab [&>*]:select-none scroll-bar scroll-smooth"
             id="slide"
           >
             <img
@@ -559,10 +611,10 @@
             <img draggable="false" src="./assets/img/card_3.svg" alt="" />
           </div>
           <!-- slider btn -->
-          <div class="mt-5 flex justify-between items-center">
-            <div class="flex gap-7">
+          <div class="mt-5 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+            <div class="flex flex-col sm:flex-row items-center gap-2 max-sm:w-full">
               <!-- arrow -->
-              <div class="flex gap-5">
+              <div class="flex w-full max-sm:justify-between gap-5">
                 <!-- left -->
                 <div
                   id="L"
@@ -579,8 +631,8 @@
                 </div>
               </div>
               <!-- select -->
-              <div class="flex items-center gap-2 relative">
-                <h4>Pages</h4>
+              <div class="flex items-center gap-2 relative ">
+                <h4 class="max-sm:w-auto">Pages</h4>
                 <div
                   class="relative w-[200px] shadow-[0px_24px_24px_0px] shadow-[#5857574d] rounded-full"
                 >
@@ -599,11 +651,11 @@
                     <i class="fa-solid fa-sort-down text-base"></i>
                   </div>
                 </div>
-                <h4>of <span id="total-slide"></span></h4>
+                <h4 class="flex gap-1">of <span id="total-slide"></span></h4>
               </div>
             </div>
             <div
-              class="text-xs font-normal p-4 rounded-full bg-[#2042B6] text-white w-fit font-messina mr-20 cursor-pointer shadow-[0px_24px_24px_0px] shadow-[#5857574d]"
+              class="max-sm:w-full text-xs font-normal p-4 rounded-full bg-[#2042B6] text-white w-fit font-messina lg:mr-20 cursor-pointer shadow-[0px_24px_24px_0px] shadow-[#5857574d]"
             >
               Download the 2024 Report
             </div>
@@ -611,11 +663,11 @@
         </div>
       </section>
       <!-- stories and Idea -->
-      <section class="mb-16">
-        <h1 class="text-[48px] font-nantes">Stories & Ideas</h1>
+      <section class="mb-16 max-sm:mx-3 max-[1300px]:mx-5">
+        <h1 class="text-[32px] sm:text-[36px] min-[800px]:text-[48px] font-nantes">Stories & Ideas</h1>
         <p class="mt-4 font-messina text-xl">The latest news and updates</p>
         <!-- cards -->
-        <div class="mt-20 grid grid-cols-3 gap-x-5 gap-y-20">
+        <div class="mt-20 grid min-[600px]:grid-cols-2 min-[1000px]:grid-cols-3 gap-x-5 gap-y-20">
           <!-- card 01 -->
           <div class="p-5 bg-white rounded-lg relative">
             <!-- image -->
@@ -888,7 +940,7 @@
       </section>
     </main>
     <footer
-      class="mt-16 bg-[#e6e6e6] px-[90px] py-[75px] max-w-[1300px] mx-auto rounded-t-xl"
+      class="mt-16 bg-[#e6e6e6] px-[90px] py-[75px] max-w-[1300px] mx-auto rounded-t-xl h-fit"
     >
       <!-- top part -->
       <div class="flex justify-between items-start gap-32">
@@ -897,6 +949,7 @@
           Experience remarkable WordPress products with a new level of power,
           beauty, and human-centered designs.
         </div>
+
         <!-- top mid -->
         <div class="min-w-[100px]">
           <h1 class="text-xl font-bold text-[#9fa0a1] text-center font-Neue">
@@ -939,8 +992,29 @@
         </div>
       </div>
       <!-- bottom part -->
-      <div>
-        
+      <div class="flex items-start justify-between gap-24 mt-6">
+        <div>
+          <div
+            class="flex items-center gap-10 text-sm font-messina text-[#9FA0A1]"
+          >
+            <a href="#">©2024</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <p class="mt-5 text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+            voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+            fugiat iusto fuga praesentium optio, eaque rerum! Provident
+            similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+            eius earum ut molestias architecto voluptate aliquam nihil, eveniet
+            aliquid culpa officia aut! Impedit sit sunt quaera
+          </p>
+        </div>
+        <div class="flex items-center justify-start gap-8 min-w-[264px]">
+          <i class="fa-brands fa-linkedin text-[40px] text-[#9FA0A1]"></i>
+          <i class="fa-brands fa-twitter text-[40px] text-[#9FA0A1]"></i>
+        </div>
       </div>
     </footer>
     <script src="./script.js"></script>
