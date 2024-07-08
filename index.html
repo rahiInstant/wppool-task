@@ -18,7 +18,7 @@
       <nav id="nav" class="top-0 fixed z-50">
         <div
           id="nav-child"
-          class="flex items-center justify-between py-4 px-10 m-2 sm:m-5 duration-500 shadow-[#0000001f] relative"
+          class="flex items-center justify-between py-4 max-sm:px-5 sm:px-10 m-2 sm:m-5 duration-500 shadow-[#0000001f] relative"
         >
           <!-- company logo || left side -->
           <svg
@@ -226,7 +226,7 @@
       >
         <!-- left side || Tab -->
         <div
-          class="min-[1000px]:w-[25%] max-[900px]:gap-4 max-[1000px]:w-full max-[1000px]:grid max-[1000px]:gap-4 max-[1000px]:grid-cols-2 max-[290px]:grid-cols-1 p-3 bg-[#EFF3F6] rounded-[14px] w-[300px] min-[1000px]:space-y-3 font-nantes"
+          class="min-[1000px]:w-[25%] max-[900px]:gap-4 max-[1000px]:w-full max-[1000px]:grid max-[1000px]:gap-4 max-[1000px]:grid-cols-2 max-[400px]:grid-cols-1 p-3 bg-[#EFF3F6] rounded-[14px] w-[300px] min-[1000px]:space-y-3 font-nantes"
         >
           <!-- Tab 01 -->
           <div
@@ -441,96 +441,10 @@
                 </tr>
               </thead>
               <tbody
+                id="tbody"
                 class="[&>*:nth-child(even)]:bg-white [&>*:nth-child(odd)]:bg-[#F3F3F3] w-full text-center font-nantes"
               >
-                <tr class="[&>*]:p-4">
-                  <td class="rounded-l-lg">Adyen</td>
-                  <td>AFRM</td>
-                  <td>Payments</td>
-                  <td>$17.15</td>
-                  <td>$50.5</td>
-                  <td>49.0%</td>
-                  <td>15.8%</td>
-                  <td>6.3</td>
-                  <td class="rounded-r-lg">24.3%</td>
-                </tr>
-                <tr class="[&>*]:p-4">
-                  <td class="rounded-l-lg">Adyen</td>
-                  <td>AFRM</td>
-                  <td>Payments</td>
-                  <td>$17.15</td>
-                  <td>$50.5</td>
-                  <td>49.0%</td>
-                  <td>15.8%</td>
-                  <td>6.3</td>
-                  <td class="rounded-r-lg">24.3%</td>
-                </tr>
-                <tr class="[&>*]:p-4">
-                  <td class="rounded-l-lg">Adyen</td>
-                  <td>AFRM</td>
-                  <td>Payments</td>
-                  <td>$17.15</td>
-                  <td>$50.5</td>
-                  <td>49.0%</td>
-                  <td>15.8%</td>
-                  <td>6.3</td>
-                  <td class="rounded-r-lg">24.3%</td>
-                </tr>
-                <tr class="[&>*]:p-4">
-                  <td class="rounded-l-lg">Adyen</td>
-                  <td>AFRM</td>
-                  <td>Payments</td>
-                  <td>$17.15</td>
-                  <td>$50.5</td>
-                  <td>49.0%</td>
-                  <td>15.8%</td>
-                  <td>6.3</td>
-                  <td class="rounded-r-lg">24.3%</td>
-                </tr>
-                <tr class="[&>*]:p-4">
-                  <td class="rounded-l-lg">Adyen</td>
-                  <td>AFRM</td>
-                  <td>Payments</td>
-                  <td>$17.15</td>
-                  <td>$50.5</td>
-                  <td>49.0%</td>
-                  <td>15.8%</td>
-                  <td>6.3</td>
-                  <td class="rounded-r-lg">24.3%</td>
-                </tr>
-                <tr class="[&>*]:p-4">
-                  <td class="rounded-l-lg">Adyen</td>
-                  <td>AFRM</td>
-                  <td>Payments</td>
-                  <td>$17.15</td>
-                  <td>$50.5</td>
-                  <td>49.0%</td>
-                  <td>15.8%</td>
-                  <td>6.3</td>
-                  <td class="rounded-r-lg">24.3%</td>
-                </tr>
-                <tr class="[&>*]:p-4">
-                  <td class="rounded-l-lg">Adyen</td>
-                  <td>AFRM</td>
-                  <td>Payments</td>
-                  <td>$17.15</td>
-                  <td>$50.5</td>
-                  <td>49.0%</td>
-                  <td>15.8%</td>
-                  <td>6.3</td>
-                  <td class="rounded-r-lg">24.3%</td>
-                </tr>
-                <tr class="[&>*]:p-4">
-                  <td class="rounded-l-lg">Adyen</td>
-                  <td>AFRM</td>
-                  <td>Payments</td>
-                  <td>$17.15</td>
-                  <td>$50.5</td>
-                  <td>49.0%</td>
-                  <td>15.8%</td>
-                  <td>6.3</td>
-                  <td class="rounded-r-lg">24.3%</td>
-                </tr>
+                <!-- fill by dynamically created data -->
               </tbody>
             </table>
           </div>
@@ -710,7 +624,11 @@
       </section>
       <!-- stories and Idea -->
       <section class="mb-16 max-sm:mx-3 max-[1350px]:mx-5">
-        <h1 class="font-nantes">Stories & Ideas</h1>
+        <h1
+          class="text-[32px] sm:text-[36px] min-[800px]:text-[48px] font-nantes"
+        >
+          Stories & Ideas
+        </h1>
         <p class="mt-4 font-messina text-xl">The latest news and updates</p>
         <!-- cards -->
         <div
@@ -1082,7 +1000,7 @@
             <a href="#">Terms of Use</a>
             <a href="#">Privacy Policy</a>
           </div>
-          <p class="mt-5  text-sm">
+          <p class="mt-5 text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
             mollitia, molestiae quas vel sint commodi repudiandae consequuntur
             voluptatum laborum numquam blanditiis harum quisquam eius sed odit

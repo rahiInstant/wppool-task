@@ -9,6 +9,7 @@ const cardWidth = document.getElementById("card").offsetWidth;
 const showCurrent = document.getElementById("show-current");
 document.getElementById("total-slide").innerText = carousel.children.length;
 const container = document.getElementById("my-chart");
+const tbody = document.getElementById("tbody");
 
 // for navbar dropdown
 let isDrop = false;
@@ -132,3 +133,131 @@ carousel.addEventListener("mousemove", dragging);
 carousel.addEventListener("mouseup", dragStop);
 carousel.addEventListener("mouseleave", dragStop);
 carousel.addEventListener("scroll", infiniteScroll);
+
+// All companies section: table row
+
+const companiesData = [
+  {
+    company: "Adyen",
+    ticker: "AFRM",
+    vertical: "Payments",
+    price: "$17.15",
+    "market cap ($b)": "$50.5",
+    "revenue growth": "49.0%",
+    "gross margin": "15.8%",
+    "ev/revenue": "6.3",
+    "ytd performance": "24.3%",
+  },
+  {
+    company: "Affirm",
+    ticker: "AFRM",
+    vertical: "Lending",
+    price: "$16.12",
+    "market cap ($b)": "$4.7",
+    "revenue growth": "32.0%",
+    "gross margin": "48.7%",
+    "ev/revenue": "4.9",
+    "ytd performance": "77.1%",
+  },
+  {
+    company: "Alkami Technology",
+    ticker: "ALKT",
+    vertical: "B2B SaaS",
+    price: "$16.27",
+    "market cap ($b)": "$1.5",
+    "revenue growth": "34.0%",
+    "gross margin": "53.0%",
+    "ev/revenue": "7.0",
+    "ytd performance": "10.0%",
+  },
+  {
+    company: "AvidXchange",
+    ticker: "AVDX",
+    vertical: "Payments",
+    price: "$10.21",
+    "market cap ($b)": "$2.0",
+    "revenue growth": "27.0%",
+    "gross margin": "61.5%",
+    "ev/revenue": "6.0",
+    "ytd performance": "10.5%",
+  },
+  {
+    company: "Bakkt Holdings",
+    ticker: "BKKT",
+    vertical: "Wealth",
+    price: "$1.32",
+    "market cap ($b)": "$0.1",
+    "revenue growth": "38%",
+    "gross margin": "--",
+    "ev/revenue": "0.4",
+    "ytd performance": "13.8%",
+  },
+  {
+    company: "Virtu Financial Inc",
+    ticker: "VIRT",
+    vertical: "Wealth",
+    price: "$17.0",
+    "market cap ($b)": "$3.1",
+    "revenue growth": "-22.0%",
+    "gross margin": "38.2%",
+    "ev/revenue": "2.6",
+    "ytd performance": "-17.8%",
+  },
+  {
+    company: "Adyen",
+    ticker: "AFRM",
+    vertical: "Payments",
+    price: "$17.15",
+    "market cap ($b)": "$50.5",
+    "revenue growth": "49.0%",
+    "gross margin": "15.8%",
+    "ev/revenue": "6.3",
+    "ytd performance": "24.3%",
+  },
+  {
+    company: "Affirm",
+    ticker: "AFRM",
+    vertical: "Lending",
+    price: "$16.12",
+    "market cap ($b)": "$4.7",
+    "revenue growth": "32.0%",
+    "gross margin": "48.7%",
+    "ev/revenue": "4.9",
+    "ytd performance": "77.1%",
+  },
+  {
+    company: "Alkami Technology",
+    ticker: "ALKT",
+    vertical: "B2B SaaS",
+    price: "$16.27",
+    "market cap ($b)": "$1.5",
+    "revenue growth": "34.0%",
+    "gross margin": "53.0%",
+    "ev/revenue": "7.0",
+    "ytd performance": "10.0%",
+  },
+  {
+    company: "AvidXchange",
+    ticker: "AVDX",
+    vertical: "Payments",
+    price: "$10.21",
+    "market cap ($b)": "$2.0",
+    "revenue growth": "27.0%",
+    "gross margin": "61.5%",
+    "ev/revenue": "6.0",
+    "ytd performance": "10.5%",
+  },
+];
+
+for (let value of companiesData) {
+  const tableRow = document.createElement("tr");
+  tableRow.classList = `[&>*]:p-4 [&>*:first-child]:text-left [&>*:first-child]:rounded-l-lg [&>*:last-child]:rounded-r-lg`;
+  for (let values in value) {
+    console.log(values);
+    const tableData = document.createElement("td");
+    tableData.innerText = value[values];
+    tableData.className = "";
+    tableRow.appendChild(tableData);
+  }
+  tbody.appendChild(tableRow);
+}
