@@ -85,15 +85,19 @@
   background: #555;
 }
 
+/* carousel scroll bar: state of USA section */
 #carousel::-webkit-scrollbar {
   display: none;
 }
 
+/* state of USA section background */
 #state {
   background-image: url("./assets/img/state_bg.svg");
   background-repeat: no-repeat;
   background-position: right center;
 }
+
+/* for banner background */
 
 @media screen and (max-width:1200px) {
   #banner {
@@ -112,6 +116,6 @@
 }
 @media screen and (max-width:500px) {
   #banner {
-  background-size: 75%;
+  background-size: 85%;
   }
 }
